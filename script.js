@@ -93,22 +93,23 @@ function editWishListComponent(event) {
   event.preventDefault();
   // Get parent node
   let destinationDiv = document.getElementById(event.target.id).parentNode;
+
+  // Update destination name
+  let newDestination = prompt("Enter new name");
+  if (newDestination !== "") {
+    destinationDiv.childNodes.item(1).textContent = newDestination;
+  }
+
+  // Update location
+  let newLocation = prompt("Enter new location");
+  if (newLocation !== "") {
+    destinationDiv.childNodes.item(2).textContent = newLocation;
+  }
+
   // Update photo URL
   let newImgURL = prompt("Enter new photo URL");
   if (newImgURL !== "") {
     destinationDiv.childNodes.item(0).setAttribute("src", newImgURL);
-
-    // Update destination name
-    let newDestination = prompt("Enter new name");
-    if (newDestination !== "") {
-      destinationDiv.childNodes.item(1).textContent = newDestination;
-    }
-
-    // Update location
-    let newLocation = prompt("Enter new location");
-    if (newLocation !== "") {
-      destinationDiv.childNodes.item(2).textContent = newLocation;
-    }
   }
 }
 
