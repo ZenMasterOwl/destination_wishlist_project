@@ -30,14 +30,14 @@ form {
   display: flex;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: center;
-  margin: 5% 0 0 5%;
+  margin: 5% 0 0 10%;
   max-width: 600px;
   width: 30vw;
 }
 #output_container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-  margin: 5% 5% 0 5%;
+  margin: 5% 5% 0 2.5%;
   max-width: 1000px;
   width: 60vw;
 }
@@ -100,9 +100,11 @@ button:hover {
 
 @media only screen and (max-width: 700px) {
   #input_container {
+    margin: 5% 0 0 5%;
     width: 90vw;
   }
   #output_container {
+    margin: 5% 0 0 5%;
     width: 90vw;
   }
   .flex_container {

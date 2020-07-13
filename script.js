@@ -1,5 +1,6 @@
 // Declare variables
 let id = 0;
+const userForm = document.getElementById("form");
 const outputDescription = document.getElementById("output_description");
 const addToListBtn = document.getElementById("add_to_list_btn");
 const destination = document.getElementById("destination_name");
@@ -43,6 +44,7 @@ function getDescription() {
 // Functions to create and maintain wishlist components
 function addWishListComponent(event) {
   event.preventDefault();
+
   // id is used to create custom id for buttons to access their parent nodes
   id++;
   outputDescription.textContent = "My WishList";
@@ -84,6 +86,8 @@ function addWishListComponent(event) {
   listItem.appendChild(btn2);
   btn2.addEventListener("click", deleteWishListComponent);
 
+  // After all form input is used, reset the form
+  userForm.reset();
   //last thing we do is append div to outputContainer
   let listItemContainer = document.getElementById("list_item_container");
   listItemContainer.appendChild(listItem);
@@ -96,19 +100,19 @@ function editWishListComponent(event) {
 
   // Update destination name
   let newDestination = prompt("Enter new name");
-  if (newDestination !== "") {
+  if (newDestination !== "" && newDestination !== null) {
     destinationDiv.childNodes.item(1).textContent = newDestination;
   }
 
   // Update location
   let newLocation = prompt("Enter new location");
-  if (newLocation !== "") {
+  if (newLocation !== "" && newLocation !== null) {
     destinationDiv.childNodes.item(2).textContent = newLocation;
   }
 
   // Update photo URL
   let newImgURL = prompt("Enter new photo URL");
-  if (newImgURL !== "") {
+  if (newImgURL !== "" && newImgURL !== null) {
     destinationDiv.childNodes.item(0).setAttribute("src", newImgURL);
   }
 }
