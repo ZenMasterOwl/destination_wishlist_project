@@ -1,17 +1,20 @@
-//clicking button adds to list
-let outputDescription = document.getElementById("output_description");
-let addToListBtn = document.getElementById("add_to_list_btn");
-let destination = document.getElementById("destination_name");
-let locationName = document.getElementById("location_name");
-let imgURL = document.getElementById("photo_path");
-let description = document.getElementById("destination_description");
+// Declare variables
 let id = 0;
-let stockPhoto =
+const outputDescription = document.getElementById("output_description");
+const addToListBtn = document.getElementById("add_to_list_btn");
+const destination = document.getElementById("destination_name");
+const locationName = document.getElementById("location_name");
+const imgURL = document.getElementById("photo_path");
+const description = document.getElementById("destination_description");
+const stockPhoto =
   "https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
-// addToListBtn.addEventListener("click", addDestination);
-document.getElementById("form").addEventListener("submit", addDestination);
 
-//each list item adds a new element to page
+// Add wishlist component when user submits form
+document
+  .getElementById("form")
+  .addEventListener("submit", addWishListComponent);
+
+// Input getters
 function getDestination() {
   return destination.value;
 }
@@ -37,8 +40,10 @@ function getDescription() {
   }
 }
 
-function addDestination(event) {
+// Functions to create and maintain wishlist components
+function addWishListComponent(event) {
   event.preventDefault();
+  // id is used to create custom id for buttons to access their parent nodes
   id++;
   outputDescription.textContent = "My WishList";
   let listItem = document.createElement("div");
@@ -70,42 +75,44 @@ function addDestination(event) {
   btn1.setAttribute("id", "eb" + id);
   btn1.textContent = "Edit";
   listItem.appendChild(btn1);
-  btn1.addEventListener("click", editDestination);
+  btn1.addEventListener("click", editWishListComponent);
 
   let btn2 = document.createElement("button");
   btn2.setAttribute("class", "red_btn inline_btn");
   btn2.setAttribute("id", "db" + id);
   btn2.textContent = "Delete";
   listItem.appendChild(btn2);
-  btn2.addEventListener("click", deleteDestination);
+  btn2.addEventListener("click", deleteWishListComponent);
 
   //last thing we do is append div to outputContainer
   let listItemContainer = document.getElementById("list_item_container");
   listItemContainer.appendChild(listItem);
 }
-function editDestination(event) {
+
+function editWishListComponent(event) {
   event.preventDefault();
   // Get parent node
   let destinationDiv = document.getElementById(event.target.id).parentNode;
-  // Update destination name
-  let newDestination = prompt("Enter new name");
-  if (newDestination !== "") {
-    destinationDiv.childNodes.item(1).textContent = newDestination;
-  }
-
-  // Update location
-  let newLocation = prompt("Enter new location");
-  if (newLocation !== "") {
-    destinationDiv.childNodes.item(2).textContent = newLocation;
-  }
-
   // Update photo URL
   let newImgURL = prompt("Enter new photo URL");
   if (newImgURL !== "") {
     destinationDiv.childNodes.item(0).setAttribute("src", newImgURL);
+
+    // Update destination name
+    let newDestination = prompt("Enter new name");
+    if (newDestination !== "") {
+      destinationDiv.childNodes.item(1).textContent = newDestination;
+    }
+
+    // Update location
+    let newLocation = prompt("Enter new location");
+    if (newLocation !== "") {
+      destinationDiv.childNodes.item(2).textContent = newLocation;
+    }
   }
 }
-function deleteDestination(event) {
+
+function deleteWishListComponent(event) {
   event.preventDefault();
   let destinationDiv = document.getElementById(event.target.id).parentNode;
   destinationDiv.parentNode.removeChild(destinationDiv);

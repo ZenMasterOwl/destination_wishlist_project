@@ -1,12 +1,5 @@
 html {
-  margin: 0;
-  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  /* filter: sepia(50%); */
-}
-body {
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -31,12 +24,8 @@ textarea {
 form {
   width: 100%;
 }
-#main_container {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-}
+
 #input_container {
-  /* padding-left: 30px; */
   align-items: space-between;
   display: flex;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -44,27 +33,19 @@ form {
   margin: 5% 0 0 5%;
   max-width: 600px;
   width: 30vw;
-  /* flex-basis: 30%; */
-  /* border: solid 2px blue; */
 }
 #output_container {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   margin: 5% 5% 0 5%;
   max-width: 1000px;
   width: 60vw;
-  /* flex-basis: 60%; */
-  /* border: solid 2px red; */
 }
 #list_item_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: left;
-  /* align-items: space-between; */
 }
 .test_container {
   border: solid 1px rgb(219, 219, 219);
@@ -82,8 +63,6 @@ form {
   display: flex;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: space-evenly;
-  /* align-items: center; */
-  /* border: solid 2px black; */
 }
 .blue_btn {
   background-color: rgb(90, 132, 247);
@@ -119,7 +98,6 @@ button:hover {
   filter: brightness(90%);
 }
 
-/* media query for mobile format */
 @media only screen and (max-width: 700px) {
   #input_container {
     width: 90vw;
