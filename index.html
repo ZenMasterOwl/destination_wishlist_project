@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vacation Destinations WishList - Michael</title>
+  </head>
+  <body>
+    <header>
+      <h1>Vacation Destinations WishList</h1>
+      <h3>
+        Found exciting places to visit on your next vacation? Use the form below
+        to add them to your wishlist
+      </h3>
+    </header>
+    <div id="main_container">
+      <div class="flex_container">
+        <div id="input_container">
+          <form id="form" action="">
+            <label for="destination_name">Destination name</label><br />
+            <input
+              id="destination_name"
+              placeholder="Enter the name of the destination"
+              type="text"
+              required
+            /><br />
+            <label for="location_name">Location</label><br />
+            <input
+              id="location_name"
+              placeholder="Where is it located?"
+              type="text"
+              required
+            /><br />
+            <label for="photo_path">Photo</label><br />
+            <input
+              id="photo_path"
+              placeholder="Enter an image url of the place"
+              type="text"
+            /><br />
+            <label for="destination_description">Description</label><br />
+            <textarea
+              id="destination_description"
+              rows="2"
+              placeholder="This is the default text"
+            ></textarea
+            ><br />
+            <button id="add_to_list_btn" class="blue_btn" type="submit">
+              Add to list
+            </button>
+          </form>
+        </div>
+
+        <div id="output_container">
+          <h2 id="output_description">Enter destination details</h2>
+          <div id="list_item_container">
+            <!-- <div class="test_container">
+              <img
+                class="container_img"
+                src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+              />
+              <h3 class="destination_heading">Destination name</h3>
+              <p class="location_paragraph">Location</p>
+              <p class="description_paragraph">Description block</p>
+              <button class="yellow_btn inline_btn">Edit</button>
+              <button class="red_btn inline_btn">Delete</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
